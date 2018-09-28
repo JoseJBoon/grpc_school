@@ -1,6 +1,6 @@
 from xmlrpc.client import ServerProxy
 
-
+# Proxy acting as server.
 with ServerProxy('http://localhost:8000/rpc2') as proxy:
     a = proxy.add(3, 4)
     m = proxy.mul(3, 4)
