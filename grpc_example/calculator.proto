@@ -1,0 +1,18 @@
+syntax "proto3";
+
+package calculator;
+
+message IntRequest {
+    required int32 x = 1;
+    required int32 y = 2;
+}
+
+message IntResponse {
+    required int32 result = 1;
+}
+
+service Calculator {
+    rpc Add(IntRequest) returns (IntResponse) {}
+    rpc Mul(IntRequest) returns (IntResponse) {}
+    rpc Pow(IntRequest) returns (IntResponse) {}
+}
