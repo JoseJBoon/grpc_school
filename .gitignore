@@ -1,6 +1,10 @@
+# develop
+__pycache__
+
 # virtual enviroment
 */env
 */venv
+env
 
 # vscode
 .vscode

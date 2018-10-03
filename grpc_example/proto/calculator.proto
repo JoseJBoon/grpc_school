@@ -1,14 +1,14 @@
-syntax "proto3";
+syntax = "proto3";
 
 package calculator;
 
 message IntRequest {
-    required int32 x = 1;
-    required int32 y = 2;
+    int32 x = 1;
+    int32 y = 2;
 }
 
 message IntResponse {
-    required int32 result = 1;
+    int32 result = 1;
 }
 
 service Calculator {
