@@ -1,3 +1,7 @@
+# dotnet
+bin
+obj
+
 # develop
 __pycache__
 

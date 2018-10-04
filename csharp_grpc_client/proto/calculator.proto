@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package calculator;
+
+//option csharp_namespace = "Proto.Calculator";
+
+message IntRequest {
+    int32 x = 1;
+    int32 y = 2;
+}
+
+message IntResponse {
+    int32 result = 1;
+}
+
+service Calculate {
+    rpc Add(IntRequest) returns (IntResponse) {}
+    rpc Mul(IntRequest) returns (IntResponse) {}
+    rpc Pow(IntRequest) returns (IntResponse) {}
+}
