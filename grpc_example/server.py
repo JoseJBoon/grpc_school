@@ -4,12 +4,12 @@ import time
 import grpc
 
 from .proto.calculator_pb2 import IntResponse
-from .proto.calculator_pb2_grpc import add_CalculatorServicer_to_server, CalculatorServicer
+from .proto.calculator_pb2_grpc import add_CalculateServicer_to_server, CalculateServicer
 
 _ONE_DAY_IN_SECONDS = 60 * 60 * 24
 
 
-class ResponseCalculatorServicer(CalculatorServicer):
+class ResponseCalculatorServicer(CalculateServicer):
     def Add(self, request, context):
         result = request.x + request.y
         return IntResponse(result=result)
@@ -25,7 +25,7 @@ class ResponseCalculatorServicer(CalculatorServicer):
 
 def serve():  
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
-    add_CalculatorServicer_to_server(ResponseCalculatorServicer(), server)
+    add_CalculateServicer_to_server(ResponseCalculatorServicer(), server)
     server.add_insecure_port('[::]:50051')
 
     print("Start server...")

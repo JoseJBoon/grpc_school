@@ -11,7 +11,7 @@ message IntResponse {
     int32 result = 1;
 }
 
-service Calculator {
+service Calculate {
     rpc Add(IntRequest) returns (IntResponse) {}
     rpc Mul(IntRequest) returns (IntResponse) {}
     rpc Pow(IntRequest) returns (IntResponse) {}
