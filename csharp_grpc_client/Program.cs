@@ -3,6 +3,7 @@
 using Grpc.Core;
 
 using Calculator;
+using GrpcServer;
 
 namespace csharp_grpc_client
 {
@@ -12,6 +13,20 @@ namespace csharp_grpc_client
         {
             Console.WriteLine("C# client to server call");
 
+            if(args.Length == 0)
+            {
+                Console.WriteLine("Provide (c)lient or (s)erver when running this console application.");
+                Environment.Exit(0);
+            }
+            
+            if(args[0].ToLower() == "c" || args[0].ToLower() == "client")
+                RunClient();
+            else if(args[0].ToLower() == "s" || args[0].ToLower() == "server")
+                MyGrpcServer.RunServer();
+        }
+
+        static void RunClient()
+        {
             IntRequest request = new IntRequest { X = 3, Y = 4};
             Channel channel = new Channel("localhost", 50051, ChannelCredentials.Insecure);
 

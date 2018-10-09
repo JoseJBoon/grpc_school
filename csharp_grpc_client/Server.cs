@@ -28,10 +28,10 @@ namespace GrpcServer
         }
     }
 
-    class Program {
+    class MyGrpcServer {
         const int Port = 50051;
 
-        public static void Main(string[] args)
+        public static void RunServer()
         {
             Server server = new Server 
             {
